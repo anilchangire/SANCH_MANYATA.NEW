@@ -366,16 +366,15 @@
       padding-left: 5px;
     }
 
-    .student-count-input {
-      border: none;
+    .inline-badge {
+      display: inline-block;
       border-bottom: 1px dashed #000;
-      outline: none;
       font-weight: 700;
       font-size: 15px;
       text-align: center;
-      width: 80px;
-      padding: 0 2px;
-      background: transparent;
+      min-width: 60px;
+      padding: 0 4px;
+      color: #1e40af;
     }
 
     .footer-section {
@@ -473,8 +472,9 @@
         margin-top: 0 !important;
       }
 
-      .student-count-input {
+      .inline-badge {
         border-bottom: none !important;
+        color: #000 !important;
       }
     }
   </style>
@@ -507,7 +507,7 @@
         <option value="जि.प.प्रा.शाळा दौनापुर तांडा" data-udise="27270804601" data-hm="श्रीमती एस.के.लाड">जि.प.प्रा.शाळा दौनापुर तांडा</option>
         <option value="जि.प.प्रा.शाळा दौनापूर" data-udise="27270804201" data-hm="श्री.आर.टी.मंत्रे">जि.प.प्रा.शाळा दौनापूर</option>
         <option value="जि.प.प्रा.शाळा लिंबूटा तांडा" data-udise="27270804801" data-hm="श्री.एम.बी.बडगिरे">जि.प.प्रा.शाळा लिंबूटा तांडा</option>
-        <option value="जि.प.प्रा.शाळा बहादुरवाडी" data-udise="27270804401" data-hm="श्रीमती ए.डी.चिद्दरवार">जि.प.प्रा.शाळा बहादुरवाडी</option>
+        <option value="जि.प.प्रा.शाळा बहादुरवाडी" data-udise="27270804401" data-hm="श्रीमती ए.डी.चिद्दरवार">जि.p.प्रा.शाळा बहादुरवाडी</option>
         <option value="संत तुकाराम प्राथमिक विद्यालय नागापूर" data-udise="27270804004" data-hm="श्री.एन.पी.मुंडे">संत तुकाराम प्राथमिक विद्यालय नागापूर</option>
         <option value="रमाबाई प्राथमिक शाळा नागापूर" data-udise="27270804003" data-hm="श्रीमती एस.एस.बनसोडे">रमाबाई प्राथमिक शाळा नागापूर</option>
         <option value="बालाघाट विद्यालय दौनापूर" data-udise="27270804202" data-hm="श्री.एम.व्ही.कराड">बालाघाट विद्यालय दौनापूर</option>
@@ -722,9 +722,7 @@
       <li>सदर सर्व प्रवेश अर्जांची नोंद शाळेच्या प्रवेश निर्गम रजिस्टरला (General Register) अचूकपणे व विहित मुदतीत करण्यात आली आहे.</li>
       <li>माहे सप्टेंबर 2026 च्या विद्यार्थी हजेरी पत्रकात या सर्व प्रवेशित विद्यार्थ्यांची हजेरी नियमितपणे नोंदविण्यात आलेली आहे.</li>
       <li>
-        आमच्या शाळेचे संचमान्यतेसाठी सरल प्रणालीत एकूण 
-        <input type="text" class="student-count-input" id="studentTotalCount" placeholder="0" readonly>
-        विद्यार्थी 'केंद्र प्रमुख' यांच्या LOGIN ला FORWARD केले होते. परंतु, केंद्रप्रमुखांनी प्रत्यक्ष शाळेच्या प्रवेश निर्गम / हजेरीपटावरील विद्यार्थी व सरल पोर्टलवरील विद्यार्थी संख्या यातील तफावत आमच्या निदर्शनास आणून देऊन सरल पोर्तटल वरील अतिरिक्त विद्यार्थी REMOVE( कमी ) केले आहेत. याबाबत शालेय व्सयवस्दथापन / प्रशासन/ मुख्याध्यापक यांची यांस कोणतीही कायदेशीर किंवा प्रशासकीय हरकत नाही व असणार नाही. <span id="rule6Verb">देतो</span>.
+        आमच्या शाळेचे संचमान्यतेसाठी सरल प्रणालीत एकूण हजेरीपटावरील विद्यार्थी संख्या <span class="inline-badge" id="dynRegCount">0</span> असून, सरल पोर्टलवरील शाळेने फॉरवर्ड केलेली संख्या <span class="inline-badge" id="dynPortalCount">0</span> इतकी होती. या दोघांमधील तफावत <span class="inline-badge" id="dynDiffCount">0</span> इतकी असून (कोणत्याही परिस्थितीत सरल पोर्टलवरील एकूण विद्यार्थी संख्या ही हजेरीपटावरील एकूण विद्यार्थ्यांपेक्षा जास्त असता कामा नये या नियमानुसार), सदर अतिरिक्त विद्यार्थी केंद्रप्रमुखांनी आमच्या निदर्शनास आणून देऊन ते Remove केलेले आहेत. याबाबत शालेय व्यवस्थापन / प्रशासन / मुख्याध्यापक यांची यास कोणतीही कायदेशीर किंवा प्रशासकीय हरकत नाही व असणार नाही, याची हमी मी याद्वारे <span id="rule6Verb">देतो</span>.
       </li>
       <li>माझ्या माहितीप्रमाणे व शाळेतील रेकॉर्डनुसार स्टुडंट्स पोर्टलवर संचमान्यतेसाठी फॉरवर्ड केलेल्या विद्यार्थी संख्येत कसलीही अनियमितता नाही. संचमान्यतेसाठी पाठविलेल्या या विद्यार्थी संख्येबाबत भविष्यात कोणताही आक्षेप उद्भवल्यास किंवा कोणतीही तफावत आढळून आल्यास, त्यास मी <span id="rule6Designation">मुख्याध्यापक</span> वैयक्तिकरित्या व सर्वस्वी जबाबदार राहीन, याची मी हमी <span id="rule6Verb2">देतो</span>.</li>
     </ol>
@@ -1017,10 +1015,10 @@
       totalDiffCell.classList.add("diff-positive");
     }
 
-    var countField = document.getElementById('studentTotalCount');
-    if (totalPortal >= 0) {
-      countField.value = totalPortal;
-    }
+    // हमीपत्राच्या ५ व्या मुद्द्यासाठी डायनॅमिक आकडे अपडेट करणे
+    document.getElementById('dynRegCount').innerText = totalReg;
+    document.getElementById('dynPortalCount').innerText = totalPortal;
+    document.getElementById('dynDiffCount').innerText = Math.abs(totalDiff);
   }
 
   function internalSave() {
@@ -1043,7 +1041,6 @@
       headmasterName: document.getElementById('headmasterName').value,
       visitDate: document.getElementById('visitDate').value,
       remarks: document.getElementById('remarks').value,
-      studentTotalCount: document.getElementById('studentTotalCount').value,
       activeClasses: activeClasses,
       checklist: {},
       classData: []
@@ -1115,7 +1112,6 @@
       var data = JSON.parse(saved);
       if (data.visitDate) document.getElementById('visitDate').value = data.visitDate;
       if (data.remarks) document.getElementById('remarks').value = data.remarks;
-      if (data.studentTotalCount) document.getElementById('studentTotalCount').value = data.studentTotalCount;
 
       for (var k = 1; k <= 7; k++) {
         var val = data.checklist ? data.checklist['chk' + k] : null;
@@ -1169,7 +1165,6 @@
       }
     }
     document.getElementById('remarks').value = '';
-    document.getElementById('studentTotalCount').value = '0';
     var radios = document.querySelectorAll('input[type="radio"]');
     radios.forEach(function(r) { r.checked = false; });
     for (var k = 1; k <= 7; k++) {
