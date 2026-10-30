@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>केंद्रप्रमुख शाळा भेट व संचमान्यता पट पडताळणी प्रपत्र आणि हमीपत्र</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e40af;
+      --primary-light: #3b82f6;
+      --primary-subtle: #eff6ff;
+      --secondary: #0f766e;
+      --accent: #f59e0b;
+      --bg-color: #f1f5f9;
+      --card-bg: #ffffff;
+      --border-color: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --danger: #dc2626;
+      --success: #16a34a;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Mukta', 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--bg-color);
+      margin: 0;
+      padding: 12px;
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .form-container {
+      max-width: 900px;
+      margin: 10px auto;
+      background: var(--card-bg);
+      padding: 24px 28px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Header Section */
+    .header-section {
+      text-align: center;
+      padding-bottom: 16px;
+      border-bottom: 2px dashed #94a3b8;
+      margin-bottom: 20px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 9999px;
+      margin-bottom: 8px;
+    }
+
+    .header-section h2 {
+      margin: 4px 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .header-section h3 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Section Styling */
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-top: 20px;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, var(--primary-subtle) 0%, rgba(239, 246, 255, 0.2) 100%);
+      color: var(--primary);
+      padding: 7px 12px;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 4px;
+    }
+
+    .form-group input, 
+    .form-group textarea, 
+    .form-group select {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 6px;
+      outline: none;
+      background-color: #fff;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .form-group select {
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .form-group input:focus, 
+    .form-group textarea:focus, 
+    .form-group select:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 8px;
+    }
+
+    /* Dynamic Class Adder Bar */
+    .class-adder-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .class-adder-bar label {
+      font-weight: 700;
+      font-size: 14px;
+      color: #1e3a8a;
+    }
+
+    .class-adder-bar select {
+      padding: 6px 12px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1.5px solid #cbd5e1;
+      outline: none;
+      font-weight: 600;
+      min-width: 150px;
+    }
+
+    .btn-add-class {
+      padding: 7px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background 0.2s;
+    }
+
+    .btn-add-class:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* Table Styling */
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      background: #fff;
+    }
+
+    table, th, td {
+      border: 1px solid #cbd5e1;
+    }
+
+    th, td {
+      padding: 7px 5px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f8fafc;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .num-input {
+      width: 100%;
+      min-width: 58px;
+      padding: 6px 4px;
+      font-size: 14px;
+      text-align: center;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .num-input:focus {
+      background-color: #fffbeb;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+    }
+
+    .diff-cell {
+      font-weight: 700;
+      font-size: 14px;
+      background-color: #f8fafc;
+    }
+
+    .diff-negative {
+      color: var(--danger);
+      background-color: #fef2f2;
+    }
+
+    .diff-positive {
+      color: var(--success);
+      background-color: #f0fdf4;
+    }
+
+    .total-row {
+      font-weight: 700;
+      background-color: #e2e8f0;
+      font-size: 14.5px;
+    }
+
+    .btn-remove-row {
+      background: #fee2e2;
+      color: #dc2626;
+      border: 1px solid #fca5a5;
+      border-radius: 4px;
+      padding: 3px 8px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .btn-remove-row:hover {
+      background: #fca5a5;
+      color: #991b1b;
+    }
+
+    .checklist-table td {
+      padding: 10px 8px;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .radio-label {
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+
+    .radio-label input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--primary);
+    }
+
+    .print-val-display {
+      display: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .sign-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+      padding: 0 25px;
+      font-weight: 700;
+      font-size: 14px;
+      color: #1e293b;
+    }
+
+    /* भाग २: हमीपत्र विभाग */
+    .undertaking-sheet {
+      margin-top: 40px;
+      padding-top: 25px;
+      border-top: 2px dashed #94a3b8;
+      line-height: 1.7;
+      font-size: 15.5px;
+    }
+
+    .doc-header-box {
+      border: 1.5px solid #000;
+      padding: 7px 10px;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .doc-header-box h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .school-info-row {
+      margin-bottom: 10px;
+      font-size: 15.5px;
+    }
+
+    .dynamic-val {
+      font-weight: 700;
+      color: #000;
+    }
+
+    .declaration-title {
+      font-weight: 700;
+      margin-top: 15px;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .declaration-intro {
+      text-indent: 35px;
+      text-align: justify;
+      margin-bottom: 16px;
+    }
+
+    .rules-list {
+      margin: 0;
+      padding-left: 20px;
+      text-align: justify;
+    }
+
+    .rules-list li {
+      margin-bottom: 10px;
+      padding-left: 5px;
+    }
+
+    .student-count-input {
+      border: none;
+      border-bottom: 1px dashed #000;
+      outline: none;
+      font-weight: 700;
+      font-size: 15px;
+      text-align: center;
+      width: 140px;
+      padding: 0 4px;
+      background: transparent;
+    }
+
+    .footer-section {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-weight: 700;
+      font-size: 15.5px;
+    }
+
+    /* मुख्य बटण */
+    .btn-container {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .single-main-btn {
+      padding: 14px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%);
+      color: white;
+      box-shadow: 0 4px 14px rgba(30, 64, 175, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .single-main-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(30, 64, 175, 0.45);
+    }
+
+    @media (max-width: 650px) {
+      .form-container { padding: 15px 12px; }
+      .form-row { flex-direction: column; gap: 0; }
+      .class-adder-bar { flex-direction: column; align-items: stretch; }
+      .sign-section, .footer-section { flex-direction: column; gap: 30px; text-align: center; }
+      .single-main-btn { width: 100%; justify-content: center; font-size: 15px; padding: 14px 8px; }
+    }
+
+    /* प्रिंटिंगचे नियम */
+    @media print {
+      body { 
+        background: transparent !important; 
+        padding: 0 !important; 
+      }
+      .form-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      .btn-container, .header-badge, .class-adder-bar, .action-col { 
+        display: none !important; 
+      }
+      
+      .num-input, input, textarea, select {
+        border: none !important;
+        background: transparent !important;
+        appearance: none;
+        -webkit-appearance: none;
+        font-weight: 600;
+      }
+
+      .section-title {
+        background: transparent !important;
+        border: none !important;
+        border-left: none !important;
+        color: #000 !important;
+        padding-left: 0 !important;
+        font-size: 15px !important;
+        font-weight: bold !important;
+      }
+
+      .radio-group {
+        display: none !important;
+      }
+
+      .print-val-display {
+        display: block !important;
+        text-align: center;
+      }
+
+      .undertaking-sheet {
+        page-break-before: always;
+        border-top: none !important;
+        padding-top: 15px !important;
+        margin-top: 0 !important;
+      }
+
+      .student-count-input {
+        border-bottom: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container" id="reportForm">
+  
+  <!-- ==================== भाग १: शाळा भेट व संचमान्यता प्रपत्र ==================== -->
+  <div class="header-section">
+    <span class="header-badge">शाळा तपासणी व संचमान्यता पोर्टल</span>
+    <h2>केंद्रप्रमुख शाळा भेट व संचमान्यता पट पडताळणी प्रपत्र</h2>
+    <h3>शैक्षणिक वर्ष: २०२६-२७ | समूह साधन केंद्र कन्या नागापूर</h3>
+  </div>
+
+  <div class="section-title">१. शाळेची प्राथमिक माहिती</div>
+  
+  <div class="form-row">
+    <div class="form-group" style="flex: 2;">
+      <label for="schoolName">शाळेचे नाव निवडा:</label>
+      <select id="schoolName" name="schoolName" onchange="handleSchoolChange()" required>
+        <option value="" data-udise="" data-hm="">-- शाळा निवडा --</option>
+        <option value="जि.प.कें.प्रा.शाळा कन्या नागापूर" data-udise="27270804001" data-hm="श्री.बी.डी.राठोड">जि.प.कें.प्रा.शाळा कन्या नागापूर</option>
+        <option value="जि.प.मा.शाळा नागापूर" data-udise="27270804002" data-hm="श्री.ए.बी. गायकवाड">जि.प.मा.शाळा नागापूर</option>
+        <option value="जि.प.प्रा.शाळा डाबी" data-udise="27270804101" data-hm="श्री.एम.आर.फड">जि.प.प्रा.शाळा डाबी</option>
+        <option value="जि.प.प्रा.शाळा डाबी तांडा" data-udise="27270804701" data-hm="श्री.एस.जी.फड">जि.प.प्रा.शाळा डाबी तांडा</option>
+        <option value="जि.प.प्रा.शाळा वानटाकळी" data-udise="27270804301" data-hm="श्री.आर.बी.जोशी">जि.प.प्रा.शाळा वानटाकळी</option>
+        <option value="जि.प.प्रा.शाळा वानटाकळी तांडा" data-udise="27270804501" data-hm="श्री.एम.एन.जाधव">जि.प.प्रा.शाळा वानटाकळी तांडा</option>
+        <option value="जि.प.प्रा.शाळा एकबाली तांडा" data-udise="27270804302" data-hm="श्री.के.बी.माडजे">जि.प.प्रा.शाळा एकबाली तांडा</option>
+        <option value="जि.प.प्रा.शाळा दौनापुर तांडा" data-udise="27270804601" data-hm="श्रीमती एस.के.लाड">जि.प.प्रा.शाळा दौनापुर तांडा</option>
+        <option value="जि.प.प्रा.शाळा दौनापूर" data-udise="27270804201" data-hm="श्री.आर.टी.मंत्रे">जि.प.प्रा.शाळा दौनापूर</option>
+        <option value="जि.प.प्रा.शाळा लिंबूटा तांडा" data-udise="27270804801" data-hm="श्री.एम.बी.बडगिरे">जि.प.प्रा.शाळा लिंबूटा तांडा</option>
+        <option value="जि.प.प्रा.शाळा बहादुरवाडी" data-udise="27270804401" data-hm="श्रीमती ए.डी.चिद्दरवार">जि.प.प्रा.शाळा बहादुरवाडी</option>
+        <option value="संत तुकाराम प्राथमिक विद्यालय नागापूर" data-udise="27270804004" data-hm="श्री.एन.पी.मुंडे">संत तुकाराम प्राथमिक विद्यालय नागापूर</option>
+        <option value="रमाबाई प्राथमिक शाळा नागापूर" data-udise="27270804003" data-hm="श्रीमती एस.एस.बनसोडे">रमाबाई प्राथमिक शाळा नागापूर</option>
+        <option value="बालाघाट विद्यालय दौनापूर" data-udise="27270804202" data-hm="श्री.एम.व्ही.कराड">बालाघाट विद्यालय दौनापूर</option>
+      </select>
+    </div>
+
+    <div class="form-group" style="flex: 1;">
+      <label for="udiseCode">शाळेचा यु-डायस क्रमांक:</label>
+      <input type="text" id="udiseCode" name="udiseCode" placeholder="आपोआप येईल" readonly style="background-color: #f8fafc; font-weight: bold;">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group" style="flex: 2;">
+      <label for="headmasterName">मुख्याध्यापकांचे नाव:</label>
+      <input type="text" id="headmasterName" name="headmasterName" placeholder="आपोआप येईल" readonly style="background-color: #f8fafc; font-weight: bold;">
+    </div>
+
+    <div class="form-group" style="flex: 1;">
+      <label for="visitDate">भेटीचा दिनांक:</label>
+      <input type="date" id="visitDate" name="visitDate" onchange="updateUndertakingDate()" required>
+    </div>
+  </div>
+
+  <div class="section-title">२. वर्गवार विद्यार्थी पट व उपस्थिती पडताळणी</div>
+  
+  <div class="class-adder-bar">
+    <label for="selectClassToAdd">वर्ग निवडा:</label>
+    <select id="selectClassToAdd">
+      <option value="1">इयत्ता पहिली (१)</option>
+      <option value="2">इयत्ता दुसरी (२)</option>
+      <option value="3">इयत्ता तिसरी (३)</option>
+      <option value="4">इयत्ता चौथी (४)</option>
+      <option value="5">इयत्ता पाचवी (५)</option>
+      <option value="6">इयत्ता सहावी (६)</option>
+      <option value="7">इयत्ता सातवी (७)</option>
+      <option value="8">इयत्ता आठवी (८)</option>
+      <option value="9">इयत्ता नववी (९)</option>
+      <option value="10">इयत्ता दहावी (१०)</option>
+    </select>
+    <button type="button" class="btn-add-class" onclick="addClassFromDropdown()">
+      ➕ हा वर्ग जोडा
+    </button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 6%;">अ.क्र.</th>
+          <th style="width: 14%;">वर्ग</th>
+          <th>हजेरीपटावरील एकूण विद्यार्थी (Register)</th>
+          <th>सरल पोर्टलवरील एकूण विद्यार्थी</th>
+          <th>आधार प्रमाणित (Valid) विद्यार्थी</th>
+          <th>प्रत्यक्ष उपस्थित विद्यार्थी (भेटीच्या दिवशी)</th>
+          <th style="width: 14%;">तफावत (रजिस्टर - पोर्टल)</th>
+          <th class="action-col" style="width: 7%;">क्रिया</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody"></tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td colspan="2">एकूण</td>
+          <td id="totalReg">0</td>
+          <td id="totalPortal">0</td>
+          <td id="totalAadhar">0</td>
+          <td id="totalPresent">0</td>
+          <td id="totalDiff">0</td>
+          <td class="action-col"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="section-title">३. आवश्यक कागदपत्रे व रेकॉर्ड तपासणी</div>
+  <div class="table-container">
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th style="width: 8%;">अ.क्र.</th>
+          <th>तपासणीचा तपशील / बाबी</th>
+          <th style="width: 28%;">पडताळणी</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>१.</td>
+          <td style="text-align: left;">शाळेचे जनरल रजिस्टर (दाखल-खारीज नोंदवही) अद्ययावत आहे का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk1" value="होय" onchange="updatePrintChecklist(1, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk1" value="नाही" onchange="updatePrintChecklist(1, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk1">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>२.</td>
+          <td style="text-align: left;">वर्गवार दैनंदिन हजेरीपट आणि जनरल रजिस्टर मधील पटसंख्या जुळते का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk2" value="होय" onchange="updatePrintChecklist(2, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk2" value="नाही" onchange="updatePrintChecklist(2, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk2">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>३.</td>
+          <td style="text-align: left;">सरल (Student Portal) वरील विद्यार्थी संख्या आणि हजेरीपटावरील संख्या एकसमान आहे का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk3" value="होय" onchange="updatePrintChecklist(3, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk3" value="नाही" onchange="updatePrintChecklist(3, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk3">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>४.</td>
+          <td style="text-align: left;">शाळेत दुबार (Duplicate) नोंद असलेले विद्यार्थी वगळण्यात आले आहेत का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk4" value="होय" onchange="updatePrintChecklist(4, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk4" value="नाही" onchange="updatePrintChecklist(4, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk4">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>५.</td>
+          <td style="text-align: left;">प्रदीर्घ काळ गैरहजर/स्थलांतरित विद्यार्थ्यांच्या नोंदी पोर्टलवर अद्ययावत केल्या आहेत का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk5" value="होय" onchange="updatePrintChecklist(5, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk5" value="नाही" onchange="updatePrintChecklist(5, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk5">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>६.</td>
+          <td style="text-align: left;">आधार इनव्हॅलिड (Aadhaar Invalid) विद्यार्थ्यांचे आधार अपडेट करण्याचे काम सुरू आहे का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk6" value="होय" onchange="updatePrintChecklist(6, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk6" value="नाही" onchange="updatePrintChecklist(6, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk6">-</div>
+          </td>
+        </tr>
+        <tr>
+          <td>७.</td>
+          <td style="text-align: left;">स्थलांतर प्रमाणपत्र (TC) घेऊन गेलेल्या सर्व विद्यार्थ्यांची नावे शाळेने स्वतःच्या यूडायस+ मधून ऑनलाईन देखील कमी केले आहेत का?</td>
+          <td>
+            <div class="radio-group">
+              <label class="radio-label"><input type="radio" name="chk7" value="होय" onchange="updatePrintChecklist(7, 'होय')"> [ ] होय</label>
+              <label class="radio-label"><input type="radio" name="chk7" value="नाही" onchange="updatePrintChecklist(7, 'नाही')"> [ ] नाही</label>
+            </div>
+            <div class="print-val-display" id="print_chk7">-</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">४. केंद्रप्रमुखांचे निरीक्षण व शेरा</div>
+  <div class="form-group">
+    <label>पोर्टल आणि हजेरीपटात तफावत असल्यास त्याची कारणे (उदा. स्थलांतर, दुबार नोंद इ.):</label>
+    <textarea id="remarks" rows="3" placeholder="तफावतीची कारणे व तपासणी शेरा येथे नोंदवा..."></textarea>
+  </div>
+
+  <div class="sign-section">
+    <div><span id="hmSignLabel1">मुख्याध्यापकाची</span> स्वाक्षरी व शिक्का</div>
+    <div>केंद्रप्रमुखाची स्वाक्षरी व नाव</div>
+  </div>
+
+
+  <!-- ==================== भाग २: मुख्याध्यापकांचे हमीपत्र ==================== -->
+  <div class="undertaking-sheet">
+    
+    <div class="doc-header-box">
+      <h2><span id="undDocTitle">मुख्याध्यापकांचे</span> हमीपत्र / शपथपत्र (संचमान्यता २०२६-२७ करिता)</h2>
+    </div>
+
+    <div class="school-info-row">
+      <b>शाळेचे नाव :-</b> <span class="dynamic-val" id="dispSchoolName">बालाघाट विद्यालय दौनापूर</span>
+    </div>
+
+    <div class="school-info-row" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <div>
+        <b>यु-डायस कोड :</b> <span class="dynamic-val" id="dispUdise">27270804202</span>
+      </div>
+      <div>
+        <b>केंद्र -</b> कन्या नागापूर, &nbsp;<b>ता.</b> परळी वै. &nbsp;<b>जि.</b> बीड
+      </div>
+    </div>
+
+    <div class="declaration-title">घोषणापत्र / हमीपत्र :-</div>
+
+    <div class="declaration-intro">
+      मी खाली सही <span id="declVerbSign">करणार</span> <b><span class="dynamic-val" id="dispHmName">श्री.एम.व्ही.कराड</span></b> <span id="declDesignation">मुख्याध्यापक</span>, <b><span class="dynamic-val" id="dispDeclSchoolName">बालाघाट विद्यालय दौनापूर</span></b> असे हमीपत्र व शपथपत्र लिहून <span id="declVerbGive">देतो</span> की......
+    </div>
+
+    <ol class="rules-list">
+      <li>आमच्या शाळेची शैक्षणिक वर्ष 2026-27 ची स्टुडंट्स पोर्टलवरील संचमान्यता विषयक विद्यार्थी संख्या शाळास्तरावरून समुह साधन केंद्र स्तरावर (केंद्रप्रमुख यांच्याकडे) फॉरवर्ड करण्यात आलेली आहे.</li>
+      <li>शाळेत 15 जून ते 30 सप्टेंबर या कालावधीत प्रवेश घेतलेल्या सर्व विद्यार्थ्यांचे प्रवेश अर्ज शाळेत उपलब्ध आहेत.</li>
+      <li>सदर सर्व प्रवेश अर्जांची नोंद शाळेच्या प्रवेश निर्गम रजिस्टरला (General Register) अचूकपणे व विहित मुदतीत करण्यात आली आहे.</li>
+      <li>माहे सप्टेंबर 2026 च्या विद्यार्थी हजेरी पत्रकात या सर्व प्रवेशित विद्यार्थ्यांची हजेरी नियमितपणे नोंदविण्यात आलेली आहे.</li>
+      <li>
+        आमच्या शाळेचे संचमान्यतेसाठी सरल प्रणालीत एकुण 
+        <input type="text" class="student-count-input" id="studentTotalCount" placeholder="0">
+        विद्यार्थी केंद्र प्रमुख यांच्या LOGIN ला FORWARD केले असून ते सर्व शाळेच्या प्रवेश निर्गम व विद्यार्थी हजेरी पत्रक यावर नोंदलेले आहेत.
+      </li>
+      <li>माझ्या माहितीप्रमाणे व शाळेतील रेकॉर्डनुसार स्टुडंट्स पोर्टलवर संचमान्यतेसाठी फॉरवर्ड केलेल्या विद्यार्थी संख्येत कसलीही अनियमितता नाही. संचमान्यतेसाठी पाठविलेल्या या विद्यार्थी संख्येबाबत भविष्यात कोणताही आक्षेप उद्भवल्यास किंवा कोणतीही तफावत आढळून आल्यास, त्यास मी <span id="rule6Designation">मुख्याध्यापक</span> वैयक्तिकरित्या व सर्वस्वी जबाबदार राहीन, याची मी हमी <span id="rule6Verb">देतो</span>.</li>
+    </ol>
+
+    <div class="footer-section">
+      <div class="footer-left">
+        दि. &nbsp;<span id="undFooterDate">______/10/2026</span>
+      </div>
+      <div class="footer-right">
+        <span id="footerHmSign">मुख्याध्यापक</span> सही
+      </div>
+    </div>
+
+  </div>
+
+  <!-- सर्व कृतींसाठी एकच मुख्य बटण -->
+  <div class="btn-container">
+    <button type="button" class="single-main-btn" onclick="savePrintAndNext()">
+      💾 सेव्ह करा, PDF/प्रिंट काढा व पुढील फॉर्म भरा ➔
+    </button>
+  </div>
+
+</div>
+
+<script>
+  var classMaster = {
+    1: "इयत्ता पहिली",
+    2: "इयत्ता दुसरी",
+    3: "इयत्ता तिसरी",
+    4: "इयत्ता चौथी",
+    5: "इयत्ता पाचवी",
+    6: "इयत्ता सहावी",
+    7: "इयत्ता सातवी",
+    8: "इयत्ता आठवी",
+    9: "इयत्ता नववी",
+    10: "इयत्ता दहावी"
+  };
+
+  var activeClasses = [];
+
+  function updatePrintChecklist(index, val) {
+    var pDiv = document.getElementById('print_chk' + index);
+    if (val === 'होय') {
+      pDiv.innerHTML = '<span style="font-size:15px; color:#0f766e;">[ ✓ ] होय</span>';
+    } else if (val === 'नाही') {
+      pDiv.innerHTML = '<span style="font-size:15px; color:#dc2626;">[ ✓ ] नाही</span>';
+    } else {
+      pDiv.innerHTML = '-';
+    }
+  }
+
+  function updateUndertakingDate() {
+    var vDate = document.getElementById('visitDate').value;
+    var formattedDate = "______/10/2026";
+    if (vDate) {
+      var parts = vDate.split('-');
+      formattedDate = parts[2] + '/' + parts[1] + '/' + parts[0];
+    }
+    document.getElementById('undFooterDate').innerText = formattedDate;
+  }
+
+  // लिंग ओळखून स्त्रीलिंगी / पुल्लिंगी व्याकरण व क्रियापदे बदलणारे फंक्शन
+  function applyGenderGrammar(hmName) {
+    var isFemale = false;
+    if (hmName) {
+      // नावात 'श्रीमती', 'सौ', किंवा 'कु.' असल्यास
+      if (hmName.indexOf('श्रीमती') !== -1 || hmName.indexOf('सौ.') !== -1 || hmName.indexOf('कु.') !== -1) {
+        isFemale = true;
+      }
+    }
+
+    if (isFemale) {
+      // स्त्रीलिंगी रूपे
+      document.getElementById('hmSignLabel1').innerText = "मुख्याध्यापिकेची";
+      document.getElementById('undDocTitle').innerText = "मुख्याध्यापिकेचे";
+      document.getElementById('declVerbSign').innerText = "करणारी";
+      document.getElementById('declDesignation').innerText = "मुख्याध्यापिका";
+      document.getElementById('declVerbGive').innerText = "देते";
+      document.getElementById('rule6Designation').innerText = "मुख्याध्यापिका";
+      document.getElementById('rule6Verb').innerText = "देते";
+      document.getElementById('footerHmSign').innerText = "मुख्याध्यापिका";
+    } else {
+      // पुल्लिंगी रूपे
+      document.getElementById('hmSignLabel1').innerText = "मुख्याध्यापकाची";
+      document.getElementById('undDocTitle').innerText = "मुख्याध्यापकांचे";
+      document.getElementById('declVerbSign').innerText = "करणार";
+      document.getElementById('declDesignation').innerText = "मुख्याध्यापक";
+      document.getElementById('declVerbGive').innerText = "देतो";
+      document.getElementById('rule6Designation').innerText = "मुख्याध्यापक";
+      document.getElementById('rule6Verb').innerText = "देतो";
+      document.getElementById('footerHmSign').innerText = "मुख्याध्यापक";
+    }
+  }
+
+  function handleSchoolChange() {
+    var select = document.getElementById('schoolName');
+    var selectedOption = select.options[select.selectedIndex];
+    
+    var sName = selectedOption.value || '';
+    var udise = selectedOption.getAttribute('data-udise') || '';
+    var hm = selectedOption.getAttribute('data-hm') || '';
+
+    document.getElementById('udiseCode').value = udise;
+    document.getElementById('headmasterName').value = hm;
+
+    document.getElementById('dispSchoolName').innerText = sName || '______________';
+    document.getElementById('dispUdise').innerText = udise || '______________';
+    document.getElementById('dispHmName').innerText = hm || '______________';
+    document.getElementById('dispDeclSchoolName').innerText = sName || '______________';
+    updateUndertakingDate();
+
+    // लिंगानुसार व्याकरण लागू करणे
+    applyGenderGrammar(hm);
+
+    if (udise) {
+      loadSavedSchoolData(udise);
+    } else {
+      activeClasses = [1, 2, 3, 4];
+      renderDynamicTable();
+      clearTableInputs();
+    }
+  }
+
+  function addClassFromDropdown() {
+    var classSelect = document.getElementById('selectClassToAdd');
+    var classId = parseInt(classSelect.value, 10);
+
+    if (activeClasses.indexOf(classId) !== -1) {
+      alert(classMaster[classId] + ' हा वर्ग आधीच टेबलमध्ये जोडलेला आहे!');
+      return;
+    }
+
+    activeClasses.push(classId);
+    activeClasses.sort(function(a, b) { return a - b; });
+    renderDynamicTable();
+
+    if (classId < 10) {
+      classSelect.value = classId + 1;
+    }
+  }
+
+  function removeClassRow(classId) {
+    var idx = activeClasses.indexOf(classId);
+    if (idx !== -1) {
+      activeClasses.splice(idx, 1);
+      renderDynamicTable();
+      calculateTotals();
+    }
+  }
+
+  function renderDynamicTable() {
+    var tbody = document.getElementById('studentTableBody');
+    var existingValues = {};
+
+    for (var i = 0; i < activeClasses.length; i++) {
+      var id = activeClasses[i];
+      if (document.getElementById('reg_' + id)) {
+        existingValues[id] = {
+          reg: document.getElementById('reg_' + id).value,
+          portal: document.getElementById('portal_' + id).value,
+          aadhar: document.getElementById('aadhar_' + id).value,
+          pres: document.getElementById('pres_' + id).value
+        };
+      }
+    }
+
+    var html = '';
+    for (var k = 0; k < activeClasses.length; k++) {
+      var cId = activeClasses[k];
+      var cName = classMaster[cId];
+      var srNo = k + 1;
+
+      html += '<tr id="row_' + cId + '">' +
+        '<td>' + srNo + '</td>' +
+        '<td><b>' + cName + '</b></td>' +
+        '<td><input type="number" min="0" class="num-input reg-in" id="reg_' + cId + '" oninput="calculateRow(' + cId + ')" onblur="fillZeroIfEmpty(this)"></td>' +
+        '<td><input type="number" min="0" class="num-input portal-in" id="portal_' + cId + '" oninput="calculateRow(' + cId + ')" onblur="fillZeroIfEmpty(this)"></td>' +
+        '<td><input type="number" min="0" class="num-input aadhar-in" id="aadhar_' + cId + '" oninput="calculateTotals()" onblur="fillZeroIfEmpty(this)"></td>' +
+        '<td><input type="number" min="0" class="num-input pres-in" id="pres_' + cId + '" oninput="calculateTotals()" onblur="fillZeroIfEmpty(this)"></td>' +
+        '<td class="diff-cell" id="diff_' + cId + '">0</td>' +
+        '<td class="action-col"><button type="button" class="btn-remove-row" onclick="removeClassRow(' + cId + ')" title="हा वर्ग काढा">❌</button></td>' +
+      '</tr>';
+    }
+
+    tbody.innerHTML = html;
+
+    for (var m = 0; m < activeClasses.length; m++) {
+      var curId = activeClasses[m];
+      if (existingValues[curId]) {
+        document.getElementById('reg_' + curId).value = existingValues[curId].reg || '';
+        document.getElementById('portal_' + curId).value = existingValues[curId].portal || '';
+        document.getElementById('aadhar_' + curId).value = existingValues[curId].aadhar || '';
+        document.getElementById('pres_' + curId).value = existingValues[curId].pres || '';
+        calculateRow(curId);
+      }
+    }
+
+    calculateTotals();
+  }
+
+  function fillZeroIfEmpty(inputElem) {
+    if (inputElem.value.trim() === '') {
+      inputElem.value = '0';
+      calculateTotals();
+    }
+  }
+
+  function ensureAllFieldsFilled() {
+    var hasEmpty = false;
+    for (var i = 0; i < activeClasses.length; i++) {
+      var id = activeClasses[i];
+      var fields = ['reg_' + id, 'portal_' + id, 'aadhar_' + id, 'pres_' + id];
+      for (var f = 0; f < fields.length; f++) {
+        var elem = document.getElementById(fields[f]);
+        if (elem && elem.value.trim() === '') {
+          hasEmpty = true;
+          elem.value = '0';
+        }
+      }
+    }
+
+    if (hasEmpty) {
+      calculateTotals();
+    }
+    return true;
+  }
+
+  function calculateRow(id) {
+    var regElem = document.getElementById('reg_' + id);
+    var portalElem = document.getElementById('portal_' + id);
+    if (!regElem || !portalElem) return;
+
+    var regVal = parseInt(regElem.value) || 0;
+    var portalVal = parseInt(portalElem.value) || 0;
+    var diff = regVal - portalVal;
+
+    var diffCell = document.getElementById('diff_' + id);
+    if (diffCell) {
+      diffCell.innerText = diff;
+      diffCell.className = "diff-cell";
+      if (diff < 0) {
+        diffCell.classList.add("diff-negative");
+      } else if (diff > 0) {
+        diffCell.classList.add("diff-positive");
+      }
+    }
+
+    calculateTotals();
+  }
+
+  function calculateTotals() {
+    var totalReg = 0, totalPortal = 0, totalAadhar = 0, totalPres = 0;
+
+    for (var i = 0; i < activeClasses.length; i++) {
+      var id = activeClasses[i];
+      var r = document.getElementById('reg_' + id);
+      var p = document.getElementById('portal_' + id);
+      var a = document.getElementById('aadhar_' + id);
+      var pr = document.getElementById('pres_' + id);
+
+      if (r) totalReg += parseInt(r.value) || 0;
+      if (p) totalPortal += parseInt(p.value) || 0;
+      if (a) totalAadhar += parseInt(a.value) || 0;
+      if (pr) totalPres += parseInt(pr.value) || 0;
+    }
+
+    var totalDiff = totalReg - totalPortal;
+
+    document.getElementById('totalReg').innerText = totalReg;
+    document.getElementById('totalPortal').innerText = totalPortal;
+    document.getElementById('totalAadhar').innerText = totalAadhar;
+    document.getElementById('totalPresent').innerText = totalPres;
+    
+    var totalDiffCell = document.getElementById('totalDiff');
+    totalDiffCell.innerText = totalDiff;
+    totalDiffCell.className = "diff-cell";
+    if (totalDiff < 0) {
+      totalDiffCell.classList.add("diff-negative");
+    } else if (totalDiff > 0) {
+      totalDiffCell.classList.add("diff-positive");
+    }
+
+    var countField = document.getElementById('studentTotalCount');
+    if (totalPortal >= 0) {
+      countField.value = totalPortal;
+    }
+  }
+
+  function internalSave() {
+    var udise = document.getElementById('udiseCode').value.trim();
+    if (!udise) {
+      alert('कृपया आधी शाळा निवडा!');
+      return false;
+    }
+
+    if (activeClasses.length === 0) {
+      alert('कृपया किमान एक वर्ग जोडा!');
+      return false;
+    }
+
+    ensureAllFieldsFilled();
+
+    var formData = {
+      schoolName: document.getElementById('schoolName').value,
+      udiseCode: udise,
+      headmasterName: document.getElementById('headmasterName').value,
+      visitDate: document.getElementById('visitDate').value,
+      remarks: document.getElementById('remarks').value,
+      studentTotalCount: document.getElementById('studentTotalCount').value,
+      activeClasses: activeClasses,
+      checklist: {},
+      classData: []
+    };
+
+    for (var k = 1; k <= 7; k++) {
+      var selectedRadio = document.querySelector('input[name="chk' + k + '"]:checked');
+      if (selectedRadio) {
+        formData.checklist['chk' + k] = selectedRadio.value;
+        updatePrintChecklist(k, selectedRadio.value);
+      } else {
+        updatePrintChecklist(k, '');
+      }
+    }
+
+    for (var i = 0; i < activeClasses.length; i++) {
+      var id = activeClasses[i];
+      formData.classData.push({
+        id: id,
+        reg: document.getElementById('reg_' + id).value,
+        portal: document.getElementById('portal_' + id).value,
+        aadhar: document.getElementById('aadhar_' + id).value,
+        pres: document.getElementById('pres_' + id).value
+      });
+    }
+
+    localStorage.setItem('shalaBhet_' + udise, JSON.stringify(formData));
+    return true;
+  }
+
+  function savePrintAndNext() {
+    if (!internalSave()) return;
+
+    window.print();
+
+    setTimeout(function() {
+      var select = document.getElementById('schoolName');
+      var nextIndex = select.selectedIndex + 1;
+
+      if (nextIndex < select.options.length) {
+        select.selectedIndex = nextIndex;
+        handleSchoolChange();
+      } else {
+        select.selectedIndex = 0;
+        document.getElementById('udiseCode').value = '';
+        document.getElementById('headmasterName').value = '';
+        activeClasses = [1, 2, 3, 4];
+        renderDynamicTable();
+        clearTableInputs();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 1000);
+  }
+
+  function loadSavedSchoolData(udise) {
+    if (!udise) return;
+    var saved = localStorage.getItem('shalaBhet_' + udise);
+    if (!saved) {
+      activeClasses = [1, 2, 3, 4];
+      renderDynamicTable();
+      clearTableInputs();
+      return;
+    }
+
+    try {
+      var data = JSON.parse(saved);
+      if (data.visitDate) document.getElementById('visitDate').value = data.visitDate;
+      if (data.remarks) document.getElementById('remarks').value = data.remarks;
+      if (data.studentTotalCount) document.getElementById('studentTotalCount').value = data.studentTotalCount;
+
+      for (var k = 1; k <= 7; k++) {
+        var val = data.checklist ? data.checklist['chk' + k] : null;
+        if (val) {
+          var r = document.querySelector('input[name="chk' + k + '"][value="' + val + '"]');
+          if (r) r.checked = true;
+          updatePrintChecklist(k, val);
+        } else {
+          updatePrintChecklist(k, '');
+        }
+      }
+
+      if (data.activeClasses && data.activeClasses.length > 0) {
+        activeClasses = data.activeClasses;
+      } else {
+        activeClasses = [1, 2, 3, 4];
+      }
+
+      renderDynamicTable();
+
+      if (data.classData) {
+        for (var i = 0; i < data.classData.length; i++) {
+          var item = data.classData[i];
+          if (document.getElementById('reg_' + item.id)) {
+            document.getElementById('reg_' + item.id).value = (item.reg !== undefined && item.reg !== '') ? item.reg : '0';
+            document.getElementById('portal_' + item.id).value = (item.portal !== undefined && item.portal !== '') ? item.portal : '0';
+            document.getElementById('aadhar_' + item.id).value = (item.aadhar !== undefined && item.aadhar !== '') ? item.aadhar : '0';
+            document.getElementById('pres_' + item.id).value = (item.pres !== undefined && item.pres !== '') ? item.pres : '0';
+            calculateRow(item.id);
+          }
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  function clearTableInputs() {
+    for (var i = 0; i < activeClasses.length; i++) {
+      var id = activeClasses[i];
+      if (document.getElementById('reg_' + id)) {
+        document.getElementById('reg_' + id).value = '0';
+        document.getElementById('portal_' + id).value = '0';
+        document.getElementById('aadhar_' + id).value = '0';
+        document.getElementById('pres_' + id).value = '0';
+        calculateRow(id);
+      }
+    }
+    document.getElementById('remarks').value = '';
+    document.getElementById('studentTotalCount').value = '0';
+    var radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(function(r) { r.checked = false; });
+    for (var k = 1; k <= 7; k++) {
+      updatePrintChecklist(k, '');
+    }
+  }
+
+  window.onload = function() {
+    activeClasses = [1, 2, 3, 4];
+    renderDynamicTable();
+
+    var dateField = document.getElementById('visitDate');
+    if (!dateField.value) {
+      dateField.value = new Date().toISOString().split('T')[0];
+    }
+
+    var select = document.getElementById('schoolName');
+    select.selectedIndex = 1;
+    handleSchoolChange();
+  };
+</script>
+
+</body>
+</html>
