@@ -35,7 +35,7 @@
     }
 
     .form-container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 10px auto;
       background: var(--card-bg);
       padding: 24px 28px;
@@ -194,7 +194,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13.5px;
+      font-size: 13px;
       background: #fff;
     }
 
@@ -203,7 +203,7 @@
     }
 
     th, td {
-      padding: 7px 5px;
+      padding: 6px 4px;
       text-align: center;
     }
 
@@ -215,9 +215,9 @@
 
     .num-input {
       width: 100%;
-      min-width: 58px;
-      padding: 6px 4px;
-      font-size: 14px;
+      min-width: 50px;
+      padding: 5px 2px;
+      font-size: 13.5px;
       text-align: center;
       border: 1px solid #cbd5e1;
       border-radius: 4px;
@@ -232,7 +232,7 @@
 
     .diff-cell {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13.5px;
       background-color: #f8fafc;
     }
 
@@ -249,7 +249,7 @@
     .total-row {
       font-weight: 700;
       background-color: #e2e8f0;
-      font-size: 14.5px;
+      font-size: 14px;
     }
 
     .btn-remove-row {
@@ -257,10 +257,10 @@
       color: #dc2626;
       border: 1px solid #fca5a5;
       border-radius: 4px;
-      padding: 3px 8px;
+      padding: 3px 6px;
       cursor: pointer;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .btn-remove-row:hover {
@@ -557,14 +557,16 @@
     <table>
       <thead>
         <tr>
-          <th style="width: 6%;">अ.क्र.</th>
-          <th style="width: 14%;">वर्ग</th>
-          <th>हजेरीपटावरील एकूण विद्यार्थी (Register)</th>
+          <th style="width: 5%;">अ.क्र.</th>
+          <th style="width: 12%;">वर्ग</th>
+          <th>हजेरीपटावरील एकूण विद्यार्थी</th>
           <th>सरल पोर्टलवरील एकूण विद्यार्थी</th>
-          <th>आधार प्रमाणित (Valid) विद्यार्थी</th>
-          <th>प्रत्यक्ष उपस्थित विद्यार्थी (भेटीच्या दिवशी)</th>
-          <th style="width: 14%;">तफावत (रजिस्टर - पोर्टल)</th>
-          <th class="action-col" style="width: 7%;">क्रिया</th>
+          <th>आधार प्रमाणित विद्यार्थी</th>
+          <th>प्रत्यक्ष उपस्थित विद्यार्थी</th>
+          <th style="width: 9%;">तफावत (रजिस्टर - पोर्टल)</th>
+          <th>केंद्रप्रमुखांनी Remove केलेली विद्यार्थी संख्या</th>
+          <th>संच मान्यतेसाठी BEO कडे पाठवलेली विद्यार्थी संख्या</th>
+          <th class="action-col" style="width: 6%;">क्रिया</th>
         </tr>
       </thead>
       <tbody id="studentTableBody"></tbody>
@@ -576,6 +578,8 @@
           <td id="totalAadhar">0</td>
           <td id="totalPresent">0</td>
           <td id="totalDiff">0</td>
+          <td id="totalRemoved">0</td>
+          <td id="totalBeo">0</td>
           <td class="action-col"></td>
         </tr>
       </tfoot>
@@ -786,14 +790,12 @@
   function applyGenderGrammar(hmName) {
     var isFemale = false;
     if (hmName) {
-      // नावात 'श्रीमती', 'सौ', किंवा 'कु.' असल्यास
       if (hmName.indexOf('श्रीमती') !== -1 || hmName.indexOf('सौ.') !== -1 || hmName.indexOf('कु.') !== -1) {
         isFemale = true;
       }
     }
 
     if (isFemale) {
-      // स्त्रीलिंगी रूपे
       document.getElementById('hmSignLabel1').innerText = "मुख्याध्यापिकेची";
       document.getElementById('undDocTitle').innerText = "मुख्याध्यापिकेचे";
       document.getElementById('declVerbSign').innerText = "करणारी";
@@ -803,7 +805,6 @@
       document.getElementById('rule6Verb').innerText = "देते";
       document.getElementById('footerHmSign').innerText = "मुख्याध्यापिका";
     } else {
-      // पुल्लिंगी रूपे
       document.getElementById('hmSignLabel1').innerText = "मुख्याध्यापकाची";
       document.getElementById('undDocTitle').innerText = "मुख्याध्यापकांचे";
       document.getElementById('declVerbSign').innerText = "करणार";
@@ -832,7 +833,6 @@
     document.getElementById('dispDeclSchoolName').innerText = sName || '______________';
     updateUndertakingDate();
 
-    // लिंगानुसार व्याकरण लागू करणे
     applyGenderGrammar(hm);
 
     if (udise) {
@@ -882,7 +882,9 @@
           reg: document.getElementById('reg_' + id).value,
           portal: document.getElementById('portal_' + id).value,
           aadhar: document.getElementById('aadhar_' + id).value,
-          pres: document.getElementById('pres_' + id).value
+          pres: document.getElementById('pres_' + id).value,
+          removed: document.getElementById('removed_' + id) ? document.getElementById('removed_' + id).value : '',
+          beo: document.getElementById('beo_' + id) ? document.getElementById('beo_' + id).value : ''
         };
       }
     }
@@ -901,6 +903,8 @@
         '<td><input type="number" min="0" class="num-input aadhar-in" id="aadhar_' + cId + '" oninput="calculateTotals()" onblur="fillZeroIfEmpty(this)"></td>' +
         '<td><input type="number" min="0" class="num-input pres-in" id="pres_' + cId + '" oninput="calculateTotals()" onblur="fillZeroIfEmpty(this)"></td>' +
         '<td class="diff-cell" id="diff_' + cId + '">0</td>' +
+        '<td><input type="number" min="0" class="num-input removed-in" id="removed_' + cId + '" oninput="calculateTotals()" onblur="fillZeroIfEmpty(this)"></td>' +
+        '<td><input type="number" min="0" class="num-input beo-in" id="beo_' + cId + '" oninput="calculateTotals()" onblur="fillZeroIfEmpty(this)"></td>' +
         '<td class="action-col"><button type="button" class="btn-remove-row" onclick="removeClassRow(' + cId + ')" title="हा वर्ग काढा">❌</button></td>' +
       '</tr>';
     }
@@ -914,6 +918,8 @@
         document.getElementById('portal_' + curId).value = existingValues[curId].portal || '';
         document.getElementById('aadhar_' + curId).value = existingValues[curId].aadhar || '';
         document.getElementById('pres_' + curId).value = existingValues[curId].pres || '';
+        if(document.getElementById('removed_' + curId)) document.getElementById('removed_' + curId).value = existingValues[curId].removed || '';
+        if(document.getElementById('beo_' + curId)) document.getElementById('beo_' + curId).value = existingValues[curId].beo || '';
         calculateRow(curId);
       }
     }
@@ -932,7 +938,7 @@
     var hasEmpty = false;
     for (var i = 0; i < activeClasses.length; i++) {
       var id = activeClasses[i];
-      var fields = ['reg_' + id, 'portal_' + id, 'aadhar_' + id, 'pres_' + id];
+      var fields = ['reg_' + id, 'portal_' + id, 'aadhar_' + id, 'pres_' + id, 'removed_' + id, 'beo_' + id];
       for (var f = 0; f < fields.length; f++) {
         var elem = document.getElementById(fields[f]);
         if (elem && elem.value.trim() === '') {
@@ -972,7 +978,7 @@
   }
 
   function calculateTotals() {
-    var totalReg = 0, totalPortal = 0, totalAadhar = 0, totalPres = 0;
+    var totalReg = 0, totalPortal = 0, totalAadhar = 0, totalPres = 0, totalRemoved = 0, totalBeo = 0;
 
     for (var i = 0; i < activeClasses.length; i++) {
       var id = activeClasses[i];
@@ -980,11 +986,15 @@
       var p = document.getElementById('portal_' + id);
       var a = document.getElementById('aadhar_' + id);
       var pr = document.getElementById('pres_' + id);
+      var rem = document.getElementById('removed_' + id);
+      var b = document.getElementById('beo_' + id);
 
       if (r) totalReg += parseInt(r.value) || 0;
       if (p) totalPortal += parseInt(p.value) || 0;
       if (a) totalAadhar += parseInt(a.value) || 0;
       if (pr) totalPres += parseInt(pr.value) || 0;
+      if (rem) totalRemoved += parseInt(rem.value) || 0;
+      if (b) totalBeo += parseInt(b.value) || 0;
     }
 
     var totalDiff = totalReg - totalPortal;
@@ -993,6 +1003,8 @@
     document.getElementById('totalPortal').innerText = totalPortal;
     document.getElementById('totalAadhar').innerText = totalAadhar;
     document.getElementById('totalPresent').innerText = totalPres;
+    document.getElementById('totalRemoved').innerText = totalRemoved;
+    document.getElementById('totalBeo').innerText = totalBeo;
     
     var totalDiffCell = document.getElementById('totalDiff');
     totalDiffCell.innerText = totalDiff;
@@ -1052,7 +1064,9 @@
         reg: document.getElementById('reg_' + id).value,
         portal: document.getElementById('portal_' + id).value,
         aadhar: document.getElementById('aadhar_' + id).value,
-        pres: document.getElementById('pres_' + id).value
+        pres: document.getElementById('pres_' + id).value,
+        removed: document.getElementById('removed_' + id).value,
+        beo: document.getElementById('beo_' + id).value
       });
     }
 
@@ -1128,6 +1142,8 @@
             document.getElementById('portal_' + item.id).value = (item.portal !== undefined && item.portal !== '') ? item.portal : '0';
             document.getElementById('aadhar_' + item.id).value = (item.aadhar !== undefined && item.aadhar !== '') ? item.aadhar : '0';
             document.getElementById('pres_' + item.id).value = (item.pres !== undefined && item.pres !== '') ? item.pres : '0';
+            if(document.getElementById('removed_' + item.id)) document.getElementById('removed_' + item.id).value = (item.removed !== undefined && item.removed !== '') ? item.removed : '0';
+            if(document.getElementById('beo_' + item.id)) document.getElementById('beo_' + item.id).value = (item.beo !== undefined && item.beo !== '') ? item.beo : '0';
             calculateRow(item.id);
           }
         }
@@ -1145,6 +1161,8 @@
         document.getElementById('portal_' + id).value = '0';
         document.getElementById('aadhar_' + id).value = '0';
         document.getElementById('pres_' + id).value = '0';
+        if(document.getElementById('removed_' + id)) document.getElementById('removed_' + id).value = '0';
+        if(document.getElementById('beo_' + id)) document.getElementById('beo_' + id).value = '0';
         calculateRow(id);
       }
     }
